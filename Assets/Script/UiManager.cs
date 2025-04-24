@@ -139,6 +139,7 @@ public class UiManager : MonoBehaviour {
 
     public void UpdateSkin (int index) {
         CharcterData charcterData = SkinPanel.GetCharcterImageData ().GetData (index);
-        Player.GetComponent<Image> ().sprite = charcterData.sprite;
+        Player.GetComponent<SpriteRenderer> ().sprite = charcterData.sprite;
+        SkinPanel.SetActive (false);
     }
 }

@@ -13,11 +13,11 @@ MonoBehaviour:
   m_Name: charcterImageData
   m_EditorClassIdentifier: 
   m_OfferPackPanel:
-  - m_BG: {fileID: 21300000, guid: 561a3b09f6d31406b8916ab5d2d6e742, type: 3}
-    count: 10
-  - m_BG: {fileID: 21300000, guid: be4627eecd9424e8bba02414847be516, type: 3}
+  - sprite: {fileID: 21300000, guid: 561a3b09f6d31406b8916ab5d2d6e742, type: 3}
+    count: 1
+  - sprite: {fileID: 21300000, guid: be4627eecd9424e8bba02414847be516, type: 3}
     count: 102
-  - m_BG: {fileID: 21300000, guid: 27c447e9225bc465c97e52bc827f27fa, type: 3}
+  - sprite: {fileID: 21300000, guid: 27c447e9225bc465c97e52bc827f27fa, type: 3}
     count: 795
-  - m_BG: {fileID: 21300000, guid: 26e4aa8c5e8a147af9515efbde168669, type: 3}
+  - sprite: {fileID: 21300000, guid: 26e4aa8c5e8a147af9515efbde168669, type: 3}
     count: 200
