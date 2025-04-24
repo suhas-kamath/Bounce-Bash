@@ -7,6 +7,7 @@ public class Coin : MonoBehaviour {
         if (other.CompareTag ("PlayerTag")) {
             UiManager.Instance.AddCoins (coinValue);
             UiManager.Instance.AnimateCoinText ();
+            // DailyChallengeManager.Instance.AddCoins(coinValue);daily challenge
             Destroy (gameObject);
         } else if (other.CompareTag ("ColliderLeft")) {
             Destroy (gameObject);

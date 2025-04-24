@@ -1,4 +1,5 @@
 using System;
+using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -7,7 +8,7 @@ public class DailyChallengeManager : MonoBehaviour {
 
     public int coinsCollectedToday = 0;
     public int dailyGoal = 50;
-    public Text challengeText;
+    public TextMeshProUGUI challengeText;
 
     private const string CoinsKey = "CoinsCollected";
     private const string DateKey = "LastPlayDate";
@@ -32,7 +33,7 @@ public class DailyChallengeManager : MonoBehaviour {
 
     private void UpdateChallengeUI () {
         if (coinsCollectedToday >= dailyGoal) {
-            challengeText.text = "🎉 Daily Challenge Complete!";
+            challengeText.text = "Daily Challenge Complete!";
         } else {
             challengeText.text = $"Daily Challenge: {coinsCollectedToday}/{dailyGoal} coins";
         }
