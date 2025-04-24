@@ -2,6 +2,7 @@
 A hyper-casual 2D arcade-style Unity game where you control a bouncing ball, dodge deadly obstacles, and collect coins to climb the scoreboard!
 
 ✅ Features I Added
+
 Physics & Core Concepts: Used Unity stuff like Rigidbody2D, colliders, and a simple singleton class for managing things easily.
 
 Dynamic Spawning: Added a system where coins and obstacles spawn based on probability — so it’s not totally random chaos.
@@ -22,5 +23,6 @@ Daily Challenge System: Built out a daily challenge manager (like “collect 50 
 
 
 🐞 Known Issues
+
 Right now, if the saved coin count is lower than the current coin count, nothing really happens — just a debug log shows up. Could improve that logic.
 The coin and obstacle spawn probability is purely random at the moment. It could’ve been better if it took previous difficulty levels into account to scale the challenge over time.
