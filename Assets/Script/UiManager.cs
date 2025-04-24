@@ -32,6 +32,12 @@ public class UiManager : MonoBehaviour {
     [SerializeField]
 
     GameObject GameOver;
+    [SerializeField]
+
+    SkinPanel SkinPanel;
+    [SerializeField]
+
+    Button SkinPanelButton;
 
     public bool StartSpawing;
 
@@ -81,21 +87,37 @@ public class UiManager : MonoBehaviour {
         Player.gameObject.GetComponent<Transform> ().localPosition = Vector3.zero;
         m_Camera.gameObject.GetComponent<Transform> ().localPosition = new (0, 0, -10f);
         Player.simulated = false;
+
         Headertext.SetActive (true);
         HighScoreText.gameObject.SetActive (false);
         GameOver.SetActive (false);
         PlayButton.gameObject.SetActive (true);
+        SkinPanel.SetActive (false);
+        SkinPanelButton.gameObject.SetActive (true);
+
+        SkinPanelButton.onClick.RemoveAllListeners ();
+        SkinPanelButton.onClick.AddListener (() => {
+            SkinPanel.SetActive (true);
+        });
+
         PlayButton.onClick.RemoveAllListeners ();
         PlayButton.onClick.AddListener (() => {
-            scoreHeadingText.text = "Score";
-            Headertext.SetActive (false);
-            HighScoreText.gameObject.SetActive (false);
-            GameOver.SetActive (false);
-            PlayButton.gameObject.SetActive (false);
-            Player.simulated = true;
-            StartSpawing = true;
-            UpdateUI (score, coins);
+            OnClickPlayButton ();
         });
+
+    }
+
+    void OnClickPlayButton () {
+        scoreHeadingText.text = "Score";
+        Headertext.SetActive (false);
+        HighScoreText.gameObject.SetActive (false);
+        GameOver.SetActive (false);
+        PlayButton.gameObject.SetActive (false);
+
+        Player.simulated = true;
+        StartSpawing = true;
+        UpdateUI (score, coins);
+        SkinPanelButton.gameObject.SetActive (false);
     }
 
     public void SetRestartScene (int score) {
@@ -104,6 +126,7 @@ public class UiManager : MonoBehaviour {
         GameOver.SetActive (true);
         HighScoreText.gameObject.SetActive (true);
         HighScoreText.text = "Score : " + score;
+        SkinPanelButton.gameObject.SetActive (false);
     }
 
     public void AnimateCoinText () {
@@ -112,5 +135,10 @@ public class UiManager : MonoBehaviour {
         coinText.transform.DOScale (Vector3.one * 1.5f, 0.3f).SetEase (Ease.OutQuad).OnComplete (() => {
             coinText.transform.localScale = Vector3.one;
         });
+    }
+
+    public void UpdateSkin (int index) {
+        CharcterData charcterData = SkinPanel.GetCharcterImageData ().GetData (index);
+        Player.GetComponent<Image> ().sprite = charcterData.sprite;
     }
 }

@@ -30,7 +30,7 @@ public class GameManager {
         UiManager.Instance.SetGameScene ();
         GameOverAction?.Invoke ();
         UiManager.Instance.UpdateUI (PlayerPrefs.GetInt ("score"), PlayerPrefs.GetInt ("coins"));
-        UiManager.Instance.SetRestartScene (Score);
+        UiManager.Instance.SetRestartScene (playerdata.Item1);
     }
 
 }
