@@ -1,5 +1,5 @@
 🎮 Bounce Bash
-A hyper-casual 2D arcade-style Unity game where you control a bouncing ball, dodge deadly obstacles, and collect coins to climb the scoreboard!
+A hyper-casual 2D arcade-style Unity game where you control a bouncing charcter, dodge deadly obstacles, and collect coins to climb the scoreboard!
 
 ✅ Features I Added
 
@@ -19,10 +19,13 @@ Coin Feedback Animation: Added a small pop animation to the coin text whenever t
 
 Persistent Data: Used PlayerPrefs to store high scores and total coins locally on the player’s device.
 
-Daily Challenge System: Built out a daily challenge manager (like “collect 50 coins”), though I haven’t hooked up the UI for it yet.Manager of daily challegene is commited in the project
+Daily Challenge System: Built out a daily challenge manager (like “collect 50 coins”), though I haven’t hooked up the UI for it yet.Manager of daily Challenge is commited in the project
 
 
 🐞 Known Issues
 
 Right now, if the saved coin count is lower than the current coin count, nothing really happens — just a debug log shows up. Could improve that logic.
+
 The coin and obstacle spawn probability is purely random at the moment. It could’ve been better if it took previous difficulty levels into account to scale the challenge over time.
+
+
