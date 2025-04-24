@@ -38,7 +38,7 @@ public class Spawner : MonoBehaviour {
         int roll = Random.Range (0, 100);
         GameObject obj;
 
-        if (roll < 55) {
+        if (roll < 70) {
             obj = Instantiate (coinPrefab, new Vector2 (yPos, x), Quaternion.identity);
         } else {
             int index = Random.Range (0, obstaclePrefabs.Length);

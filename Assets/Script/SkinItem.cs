@@ -17,7 +17,7 @@ class SkinItem : MonoBehaviour {
         button.onClick.RemoveAllListeners ();
         button.onClick.AddListener (() => {
             if (currentCount >= Count) {
-                PlayerPrefs.SetInt ("Coins", currentCount - Count);
+                PlayerPrefs.SetInt ("coins", currentCount - Count);
                 UiManager.Instance.UpdateUI (PlayerPrefs.GetInt ("score"), PlayerPrefs.GetInt ("coins"));
                 UiManager.Instance.UpdateSkin (index);
             } else {

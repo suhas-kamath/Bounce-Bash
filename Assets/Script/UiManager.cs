@@ -126,7 +126,7 @@ public class UiManager : MonoBehaviour {
         GameOver.SetActive (true);
         HighScoreText.gameObject.SetActive (true);
         HighScoreText.text = "Score : " + score;
-        SkinPanelButton.gameObject.SetActive (false);
+        SkinPanelButton.gameObject.SetActive (true);
     }
 
     public void AnimateCoinText () {
